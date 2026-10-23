@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scratchpad removed</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="icon.png">
+<style>
+:root{--bg:#f3f4f6;--card:#fff;--text:#1f2328;--muted:#5f6670;--line:#d9dce1;--accent:#2f6fde}
+@media (prefers-color-scheme: dark){:root{--bg:#17191c;--card:#202328;--text:#e8eaed;--muted:#9aa0a6;--line:#383d45;--accent:#7aa7ff}}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+main{max-width:640px;margin:0 auto;padding:40px 16px}
+article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px}
+h1{margin:0 0 4px;font-size:26px} .muted{color:var(--muted)} .small{font-size:14px}
+.reasons{display:grid;gap:8px;margin:18px 0}
+.reasons a{display:block;padding:10px 14px;border:1px solid var(--line);border-radius:10px;color:var(--text);text-decoration:none}
+.reasons a:hover{border-color:var(--accent)}
+</style></head>
+<body><main><article>
+<h1>Scratchpad is removed</h1>
+<p class="muted">Sorry it didn't stick. One tap below tells us why. It opens an email you can send as-is or add to. Nothing is sent unless you press Send.</p>
+<div class="reasons" id="reasons"></div>
+<p class="small muted">Used the live link for AI apps? Remove its helper too: in Terminal run <code>~/.scratchpad/bin/scratchpad-gateway --uninstall</code> (or delete the <code>~/.scratchpad</code> folder), and remove "scratchpad" from your AI apps' MCP settings.</p>
+  <p class="muted">Removed by accident? Your notes were deleted with the extension unless you downloaded a backup. If you have one, reinstall from the <a href="https://chromewebstore.google.com/detail/oondfihpaigdfkienmojomjefngkipcl">Chrome Web Store</a> and use Settings → Restore.</p>
+</article></main>
+<script>
+const EMAIL = "sinking-startup-6y@icloud.com";
+const v = new URLSearchParams(location.search).get("v") || "";
+const reasons = [
+  "I don't use tab groups much",
+  "It didn't do what I expected",
+  "Too many features / confusing",
+  "Something broke or I lost notes",
+  "My work computer or IT blocks it",
+  "I switched to something else",
+  "Other"
+];
+const box = document.getElementById("reasons");
+for (const r of reasons) {
+  const a = document.createElement("a");
+  const body = "Reason: " + r + "\n\nAnything else (optional):\n\n\n" + (v ? "Version " + v : "");
+  a.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Removed Scratchpad: " + r) + "&body=" + encodeURIComponent(body);
+  a.textContent = r;
+  box.append(a);
+}
+</script>
+</body></html>

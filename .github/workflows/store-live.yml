@@ -1,0 +1,26 @@
+# Turns on the "Add to Chrome" button as soon as the Chrome Web Store item is published.
+# Until then the store page has no item title; once live it says "Scratchpad".
+name: Store link check
+on:
+  schedule: [{ cron: "*/15 * * * *" }]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Switch the button on when the item is live
+        run: |
+          URL="https://chromewebstore.google.com/detail/oondfihpaigdfkienmojomjefngkipcl"
+          grep -q 'id="store" aria-disabled="true"' index.html || { echo "Already live"; exit 0; }
+          title=$(curl -sL "$URL" | grep -o '<title>[^<]*' | head -1)
+          echo "Store page: $title"
+          echo "$title" | grep -qi scratchpad || { echo "Not published yet"; exit 0; }
+          sed -i "s|<a class=\"btn primary\" id=\"store\" aria-disabled=\"true\">In review: link coming soon</a>|<a class=\"btn primary\" id=\"store\" href=\"$URL\">Add to Chrome</a>|" index.html
+          sed -i 's|Use Option 1, the Chrome Web Store version, once its link is live.|Use Option 1, the Chrome Web Store version.|' index.html
+          git config user.name Scratchpad
+          git config user.email 268749189+ironpine59@users.noreply.github.com
+          git commit -am "Store item is live: turn on Add to Chrome"
+          git push

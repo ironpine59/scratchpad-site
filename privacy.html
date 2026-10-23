@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scratchpad privacy policy</title>
+<style>
+:root{--bg:#f3f4f6;--card:#fff;--text:#1f2328;--muted:#5f6670;--line:#d9dce1}
+@media (prefers-color-scheme: dark){:root{--bg:#17191c;--card:#202328;--text:#e8eaed;--muted:#9aa0a6;--line:#383d45}}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+main{max-width:720px;margin:0 auto;padding:40px 16px}
+article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px}
+h1{margin:0 0 4px;font-size:28px} .muted{color:var(--muted)} h2{font-size:18px;margin:24px 0 6px}
+code{font:14px ui-monospace,Menlo,monospace}
+</style></head>
+<body><main><article>
+<h1>Scratchpad privacy policy</h1>
+<p class="muted">Scratchpad – Notes for Tab Groups (Chrome extension). Updated October 18, 2026.</p>
+
+<h2>The short version</h2>
+<p>Your notes stay in your browser on your computer. There is no Scratchpad account, server, analytics or tracking, and we never receive your notes. Scratchpad sends something elsewhere only when you choose to.</p>
+
+<h2>What's stored, and where</h2>
+<p>Your notes, settings, templates and (if you turn on "Remember tabs") your tab groups' saved tab titles and addresses are stored in the browser's local extension storage on your computer. They are not synced and are not sent to us.</p>
+
+<h2>When something leaves your computer</h2>
+<ul>
+<li><b>AI (optional).</b> If you connect an AI provider (Anthropic, OpenAI, Google, OpenRouter, or Ollama / LM Studio on your own computer) and press Ask or an AI action, Scratchpad sends what the ask bar shows: the pad's text, and only if you choose them, the group's tab titles and addresses, other pads, or the text of pages you tick. Each provider handles it under its own terms. OpenRouter forwards requests to the maker of the model you pick. API keys you enter are stored locally and never included in backups.</li>
+<li><b>AI gateway (optional).</b> Notes you share can be copied as a context pack (it goes wherever you paste or upload it). If you turn on the live link, a helper you install connects Scratchpad to AI apps on your computer (Claude Desktop, Claude Code and other MCP apps) through a private file and socket in ~/.scratchpad that only your user account can open; nothing listens on the network. Each app must be allowed by you the first time. Apps can read only the notes you share. On notes you set to "Read and add" they can add text and to-dos, always labeled with their name and undoable for 30 days; they can never delete, rename or change what is there. Every request is listed in the AI gateway page's activity log, which stays on your computer. Once an app reads your notes, it may send them to its own servers under its own terms.</li>
+<li><b>Send to (optional).</b> Copies a note to your clipboard or opens the app you choose (for example Obsidian, your email app, Bear or Drafts). For Google Docs, Sheets and Keep it opens a new blank one and the note travels on your clipboard, never in the address. Gmail draft puts the note in a Gmail compose window, the same way Email it does with your mail app. Nothing goes anywhere until you pick a destination.</li>
+<li><b>Connections (optional).</b> If you connect your own CRM, database or workflow (Settings → Connections), Scratchpad talks to that address directly from your browser, with the key you give it. It reads the record you link a pad to and shows it above your notes; if you ask your AI a question, the record is included. Notes, tasks, dates and people go to your system only when you press Send after seeing exactly what goes, and private asides never go unless you turn that on. Nothing passes through us. Keys stay on your computer and are never in backups.</li>
+<li><b>Setup answers.</b> Setup asks what kind of work you do and how you like Scratchpad set up. If you tick Send my setup answers, those choices are sent to us so we can build better setups for each kind of work: your area, role, the kinds of note you picked, the apps you use, and your layout choices. Never your notes, never your name, nothing that identifies you. Nothing is sent unless you tick it. Setup shows exactly what would be sent, and you can change it any time in Settings → Your setup → Share setup answers. What you write under "Fit it closer to you" is only sent if you tick that box. <b>Right now no setup answers are collected at all:</b> the box is there, but nothing is set up to receive them, so they stay on your computer. Before that changes, this page will name where they go (a form we own on Google Forms, stored by Google), how long they are kept, and how to ask for them to be deleted.</li>
+<li><b>Page access (optional).</b> Scratchpad reads a page's text only when you tick it for a question or context pack, or tick "What's on screen", and only after Chrome asks you to allow that site. Glass and the edge tab need access to all sites to appear on pages; Chrome asks when you turn them on. To make room beside a page they look at its layout and colors (where its fixed bars are, its background color), never its text, and send nothing anywhere.</li>
+</ul>
+
+<h2>Backups</h2>
+<p>Settings → Download backup saves one .json file to your computer with your notes, saved tabs, templates, References and settings. It never includes AI keys or connection keys. It stays wherever you put it; Scratchpad doesn't upload it.</p>
+<h2>Payments</h2>
+<p>Scratchpad doesn't take payments today. If paid features arrive, this page will name who handles payment and what they receive before anything is charged.</p>
+<h2>Removing Scratchpad</h2>
+<p>When you uninstall, Chrome opens a short feedback page on this site. It collects nothing unless you choose to email us. Uninstalling Scratchpad deletes its stored data from your browser, so download a backup first (Settings → Download backup) if you want to keep your notes. If you used the live link, turn it off first or delete the <code>~/.scratchpad</code> folder afterwards.</p>
+
+<h2>Contact</h2>
+<p>Questions: <a href="mailto:sinking-startup-6y@icloud.com">sinking-startup-6y@icloud.com</a></p>
+</article></main></body></html>
